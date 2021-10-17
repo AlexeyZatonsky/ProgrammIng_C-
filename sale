@@ -9,11 +9,14 @@ namespace ConsoleApplication2
         public static void Main(string[] args)
         {
             Console.WriteLine("введите сумму покупки");
-            double shop = Convert.ToDouble(Console.ReadLine());
+            string strshop = Console.ReadLine();
+            double shop;
+            bool result = double.TryParse(strshop, out shop);
 
-            if(shop > 500 && shop < 1000) Console.WriteLine($"вы получите скидку в 3% и заплатите {shop * 0.97}");
+            if (shop >=  500 && shop < 1000) Console.WriteLine($"вы получите скидку в 3% и заплатите {shop * 0.97}");
             else if (shop > 1000) Console.WriteLine($"вы получите скидку в 5% и заплатите {shop * 0.95}");
-            else Console.WriteLine($"Вы не получите скидку и заплатите полную стоимость товара ({shop})");
+            else if (shop < 500) Console.WriteLine($"Вы не получите скидку и заплатите полную стоимость товара ({shop})");
+            else if (result == false) Console.WriteLine("вы ввели строку повторите попытку"); 
         }
     }
 }
