@@ -1,0 +1,19 @@
+using System;
+using System.Runtime.InteropServices;
+
+
+namespace ConsoleApplication2
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("введите сумму покупки");
+            double shop = Convert.ToDouble(Console.ReadLine());
+
+            if(shop > 500 && shop < 1000) Console.WriteLine($"вы получите скидку в 3% и заплатите {shop * 0.97}");
+            else if (shop > 1000) Console.WriteLine($"вы получите скидку в 5% и заплатите {shop * 0.95}");
+            else Console.WriteLine($"Вы не получите скидку и заплатите полную стоимость товара ({shop})");
+        }
+    }
+}
