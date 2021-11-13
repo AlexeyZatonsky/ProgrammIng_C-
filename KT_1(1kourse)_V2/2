@@ -1,0 +1,18 @@
+using System;
+
+namespace ConsoleApplication1
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            double A, B;
+            A = Convert.ToDouble(Console.ReadLine());
+            B = Convert.ToDouble(Console.ReadLine());
+            int sum = 0;
+            for (int i = Convert.ToInt32(Math.Ceiling(A)); i <= B; i++)
+                sum += i * i;
+            Console.WriteLine(sum);
+        }
+    }
+}
