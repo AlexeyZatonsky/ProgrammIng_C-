@@ -1,0 +1,24 @@
+using System;
+
+namespace ConsoleApplication1
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            double x, y, z;
+            x = Convert.ToDouble(Console.ReadLine());
+            y = Convert.ToDouble(Console.ReadLine());
+            z = Convert.ToDouble(Console.ReadLine());
+            if (Math.Pow(x * x + y * y, 0.5) == z || 
+                Math.Pow(x * x + z * z, 0.5) == y ||
+                Math.Pow(z * z + y * y, 0.5) == x)
+            {
+                var p = (x + y + z) / 2;
+                Console.WriteLine(Math.Pow(p*(p-x)*(p-y)*(p-z), 0.5));
+            }
+            else
+                Console.WriteLine("тriangle not exist");
+        }
+    }
+}
